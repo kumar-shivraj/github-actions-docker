@@ -11,6 +11,11 @@ jobs:
   test:
     environment: testing
     runs-on: ubuntu-latest
+    # container: node:16
+    container:
+      image: node:16
+      env:
+        MONGODB_DB_NAME: ${{ env.MONGODB_DB_NAME }}
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb+srv
       MONGODB_CLUSTER_ADDRESS: cluster0.q45ee.mongodb.net
